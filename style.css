@@ -1,0 +1,428 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    min-height: 100vh;
+    background: rgb(220, 220, 255);
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 20px;
+    color: #222;
+}
+
+#app{
+    width: 100%;
+    max-width: 1500px;
+    margin: auto;
+
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* ================= HEADER ================= */
+
+#header{
+    width: 100%;
+    background: linear-gradient(
+        to right,
+        rgb(122, 92, 255),
+        rgb(104, 58, 255)
+    );
+
+    color: white;
+
+    padding: 22px 30px;
+    border-radius: 14px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    box-shadow:
+    0 4px 10px rgba(0,0,0,0.1);
+}
+
+.logoSection h1{
+    font-size: 2rem;
+}
+
+.headerInfo{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+#notesCount{
+    background: rgba(255,255,255,0.15);
+    padding: 10px 16px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+#saveStatus{
+    font-size: 14px;
+}
+
+/* ================= CONTROLS ================= */
+
+#controls{
+    width: 100%;
+    background: white;
+
+    padding: 25px;
+
+    border-radius: 14px;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+
+    box-shadow:
+    0 4px 10px rgba(0,0,0,0.08);
+}
+
+.controlBox{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.controlBox label{
+    font-weight: bold;
+}
+
+.controlBox input,
+.controlBox select{
+    padding: 14px;
+    border-radius: 10px;
+    border: 1px solid rgb(210, 210, 255);
+    outline: none;
+    font-size: 15px;
+}
+
+.controlBox input:focus,
+.controlBox select:focus{
+    border-color: rgb(122, 92, 255);
+}
+
+#clearFiltersBtn{
+    margin-top: auto;
+
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+
+    background: rgb(122, 92, 255);
+    color: white;
+
+    cursor: pointer;
+    font-weight: bold;
+
+    transition: 0.2s ease;
+}
+
+#clearFiltersBtn:hover{
+    background: rgb(104, 58, 255);
+}
+
+/* ================= CONTENT LAYOUT ================= */
+
+#contentLayout{
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    gap: 25px;
+}
+
+/* ================= NOTE FORM ================= */
+
+#noteFormSection{
+    background: white;
+    padding: 25px;
+    border-radius: 14px;
+
+    box-shadow:
+    0 4px 10px rgba(0,0,0,0.08);
+
+    height: fit-content;
+}
+
+.sectionHeader{
+    margin-bottom: 20px;
+}
+
+.sectionHeader h2{
+    color: rgb(104, 58, 255);
+}
+
+#noteForm{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.formGroup{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.formGroup label{
+    font-weight: bold;
+}
+
+.formGroup input,
+.formGroup textarea,
+.formGroup select{
+    width: 100%;
+
+    padding: 14px;
+
+    border-radius: 10px;
+    border: 1px solid rgb(210, 210, 255);
+
+    outline: none;
+    font-size: 15px;
+}
+
+.formGroup textarea{
+    resize: none;
+    min-height: 180px;
+}
+
+.formGroup input:focus,
+.formGroup textarea:focus,
+.formGroup select:focus{
+    border-color: rgb(122, 92, 255);
+}
+
+#formButtons{
+    display: flex;
+    gap: 15px;
+}
+
+#saveBtn,
+#clearBtn{
+    flex: 1;
+
+    padding: 14px;
+
+    border: none;
+    border-radius: 10px;
+
+    cursor: pointer;
+    font-weight: bold;
+
+    transition: 0.2s ease;
+}
+
+#saveBtn{
+    background: rgb(122, 92, 255);
+    color: white;
+}
+
+#saveBtn:hover{
+    background: rgb(104, 58, 255);
+}
+
+#clearBtn{
+    background: rgb(235, 235, 255);
+}
+
+#clearBtn:hover{
+    background: rgb(220, 220, 255);
+}
+
+#loadingText{
+    display: none;
+    color: rgb(104, 58, 255);
+    font-weight: bold;
+}
+
+/* ================= NOTES SECTION ================= */
+
+#notesSection{
+    background: white;
+    padding: 25px;
+    border-radius: 14px;
+
+    box-shadow:
+    0 4px 10px rgba(0,0,0,0.08);
+}
+
+/* ================= NOTES GRID ================= */
+
+#notesContainer{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+    max-height: 70vh;
+    overflow-y: auto;
+}
+
+
+/* ================= NOTE CARD ================= */
+
+.noteCard{
+    background: rgb(250, 250, 255);
+    border-left: 6px solid rgb(122, 92, 255);
+    border-radius: 12px;
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.07), 0 3px 8px rgba(0,0,0,0.07), 0 3px 8px rgba(0,0,0,0.07);
+}
+.noteCard.work{
+    border-left-color:  rgb(179, 161, 255);
+      color:  #2e1793;
+}
+.noteCard.personal{
+    border-left-color: #fff36f;
+      color: #ffcc00;
+}
+.noteCard.study{
+    border-left-color: #ff6464;
+     color: #b80000;
+}
+.noteCard.ideas{
+    border-left-color: #85ff43;
+    color: #009a00;
+}
+
+
+
+/* .noteCard h3{
+    color: rgb(104, 58, 255);
+} */
+
+.noteContent{
+    line-height: 1.5;
+    color: #444;
+}
+
+.noteCategory{
+    width: fit-content;
+
+    padding: 6px 12px;
+
+    border-radius: 20px;
+
+    background: rgb(225, 220, 255);
+
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.noteDate{
+    font-size: 14px;
+    color: gray;
+}
+
+.noteActions{
+    margin-top: auto;
+
+    display: flex;
+    gap: 10px;
+}
+
+.noteActions button{
+    flex: 1;
+
+    padding: 10px;
+
+    border: none;
+    border-radius: 8px;
+
+    cursor: pointer;
+    font-weight: bold;
+
+    transition: 0.2s ease;
+}
+
+.editBtn{
+    background: rgb(80, 220, 120);
+    color: white;
+}
+
+.editBtn:hover{
+    background: rgb(60, 200, 100);
+}
+
+.deleteBtn{
+    background: rgb(255, 90, 90);
+    color: white;
+}
+
+.deleteBtn:hover{
+    background: rgb(235, 70, 70);
+}
+
+/* ================= EMPTY STATE ================= */
+
+#emptyState{
+    margin-top: 30px;
+
+    padding: 30px;
+
+    border-radius: 12px;
+
+    background: rgb(245, 245, 255);
+
+    text-align: center;
+}
+
+#emptyState h3{
+    margin-bottom: 10px;
+    color: rgb(104, 58, 255);
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1100px){
+
+    #contentLayout{
+        grid-template-columns: 1fr;
+    }
+
+}
+
+@media (max-width: 850px){
+
+    #controls{
+        grid-template-columns: 1fr 1fr;
+    }
+
+}
+
+@media (max-width: 600px){
+
+    body{
+        padding: 12px;
+    }
+
+    #header{
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .headerInfo{
+        flex-direction: column;
+    }
+
+    #controls{
+        grid-template-columns: 1fr;
+    }
+
+    #formButtons{
+        flex-direction: column;
+    }
+
+    #notesContainer{
+        grid-template-columns: 1fr;
+    }
+
+}
