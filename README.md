@@ -16,6 +16,8 @@ Core functionality is implemented, while additional improvements and refactoring
 ## 🔥 Current Features
 
 - Add notes
+- Delete notes
+- Edit notes
 - localStorage persistence
 - Fake API simulation
 - Modular JavaScript structure
@@ -58,8 +60,6 @@ User Action → Logic Layer → State Update → Storage/API → UI Re-render
 
 ## 🚀 Planned Improvements
 
-- Delete notes
-- Edit notes
 - Category-based organization
 - Dynamic UI rendering
 - Search functionality

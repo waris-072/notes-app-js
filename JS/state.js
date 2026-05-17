@@ -16,7 +16,28 @@ function setNotes(notes) {
 }
 
 function pushNote(note) {
-   state.notes.push(note);
+   state.notes.unshift(note);
 }
 
-export { getState, setNotes, pushNote };
+function removeNote(noteId){
+   state.notes = state.notes.filter(note => String(note.id) !== String(noteId));
+}
+
+function updateNote(noteId, updatedData){
+   state.notes = state.notes.map(note =>
+      String(note.id) === String(noteId) ? {...note, ...updatedData} : note
+   ); 
+}
+
+function setEditNoteId(id) {
+   state.editNoteId = id;
+}
+
+function clearEditNoteId() {
+   state.editNoteId = null;
+}
+function getEditNoteId() {
+   return state.editNoteId;
+}
+
+export { getState, setNotes, pushNote, removeNote, updateNote, setEditNoteId, clearEditNoteId, getEditNoteId};
