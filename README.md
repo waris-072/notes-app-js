@@ -1,83 +1,36 @@
-# Notes App (Work in Progress)
+# Notes App
 
-A modular Notes Application built using HTML, CSS, and Vanilla JavaScript.  
-This project focuses on improving frontend architecture, state handling, and local data persistence.
+A modular Notes Application built using HTML, CSS, and Vanilla JavaScript with localStorage persistence and dynamic UI rendering.
 
----
+## 🚀 Features
 
-## 🚧 Status
-
-Currently in active development.
-
-Core functionality is implemented, while additional improvements and refactoring are ongoing.
-
----
-
-## 🔥 Current Features
-
-- Add notes
-- Delete notes
-- Edit notes
+- Create, edit, and delete notes
+- Category-based organization
+- Search functionality
 - localStorage persistence
 - Fake API simulation
-- Modular JavaScript structure
-
----
+- Dynamic UI rendering
+- Modular JavaScript architecture
 
 ## 🧠 Architecture
 
-- `app.js` → Core application logic
+- `app.js` → Application logic
 - `storage.js` → localStorage handling
-- `fakeApi.js` → Simulated async API behavior
-- `ui.js` → UI rendering and DOM updates
+- `fakeApi.js` → Async API simulation
+- `ui.js` → UI rendering
 - `state.js` → State management
-
----
-
-## 🔄 Application Flow
-
-User Action → Logic Layer → State Update → Storage/API → UI Re-render
-
----
 
 ## ⚙️ Tech Stack
 
 - HTML
 - CSS
-- JavaScript (Vanilla)
+- Vanilla JavaScript
 
----
-
-## 📌 Learning Focus
-
-- Separation of concerns
-- Modular JavaScript architecture
-- State management patterns
-- Dynamic rendering
-- Persistent frontend data handling
-
----
-
-## 🚀 Planned Improvements
-
-- Category-based organization
-- Dynamic UI rendering
-- Search functionality
-- Note pinning
-- Better UI/UX
-- Dark mode
-- Backend integration
-
----
-
-## ▶️ How to Run
+## ▶️ Run Locally
 
 1. Clone the repository
-2. Open `index.html` in browser
-3. Start creating notes
+2. Open `index.html` in your browser
 
----
+## 📌 Project Focus
 
-## 📊 Project Type
-
-Frontend architecture and JavaScript practice project
+Frontend architecture, modular JavaScript structure, state handling, and persistent client-side data management.

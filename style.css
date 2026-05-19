@@ -16,7 +16,6 @@ body{
     width: 100%;
     max-width: 1500px;
     margin: auto;
-
     display: flex;
     flex-direction: column;
     gap: 25px;
@@ -26,23 +25,14 @@ body{
 
 #header{
     width: 100%;
-    background: linear-gradient(
-        to right,
-        rgb(122, 92, 255),
-        rgb(104, 58, 255)
-    );
-
+    background: linear-gradient( to right, rgb(122, 92, 255), rgb(104, 58, 255));
     color: white;
-
     padding: 22px 30px;
     border-radius: 14px;
-
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-    box-shadow:
-    0 4px 10px rgba(0,0,0,0.1);
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
 }
 
 .logoSection h1{
@@ -71,15 +61,11 @@ body{
 #controls{
     width: 100%;
     background: white;
-
     padding: 25px;
-
     border-radius: 14px;
-
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
-
     box-shadow:
     0 4px 10px rgba(0,0,0,0.08);
 }
@@ -110,17 +96,13 @@ body{
 
 #clearFiltersBtn{
     margin-top: auto;
-
     padding: 14px;
     border: none;
     border-radius: 10px;
-
     background: rgb(122, 92, 255);
     color: white;
-
     cursor: pointer;
     font-weight: bold;
-
     transition: 0.2s ease;
 }
 
@@ -142,10 +124,8 @@ body{
     background: white;
     padding: 25px;
     border-radius: 14px;
-
     box-shadow:
     0 4px 10px rgba(0,0,0,0.08);
-
     height: fit-content;
 }
 
@@ -177,12 +157,9 @@ body{
 .formGroup textarea,
 .formGroup select{
     width: 100%;
-
     padding: 14px;
-
     border-radius: 10px;
     border: 1px solid rgb(210, 210, 255);
-
     outline: none;
     font-size: 15px;
 }
@@ -206,15 +183,11 @@ body{
 #saveBtn,
 #clearBtn{
     flex: 1;
-
     padding: 14px;
-
     border: none;
     border-radius: 10px;
-
     cursor: pointer;
     font-weight: bold;
-
     transition: 0.2s ease;
 }
 
@@ -247,7 +220,6 @@ body{
     background: white;
     padding: 25px;
     border-radius: 14px;
-
     box-shadow:
     0 4px 10px rgba(0,0,0,0.08);
 }
@@ -256,7 +228,7 @@ body{
 
 #notesContainer{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 20px;
     max-height: 70vh;
     overflow-y: auto;
@@ -293,12 +265,6 @@ body{
     color: #009a00;
 }
 
-
-
-/* .noteCard h3{
-    color: rgb(104, 58, 255);
-} */
-
 .noteContent{
     line-height: 1.5;
     color: #444;
@@ -306,91 +272,90 @@ body{
 
 .noteCategory{
     width: fit-content;
-
     padding: 6px 12px;
-
     border-radius: 20px;
-
     background: rgb(225, 220, 255);
-
     font-size: 13px;
     font-weight: bold;
 }
 
 .noteDate{
+    display: flex;
+    justify-content: space-between;
     font-size: 14px;
     color: gray;
 }
 
 .noteActions{
     margin-top: auto;
-
     display: flex;
     gap: 10px;
 }
 
 .noteActions button{
     flex: 1;
-
     padding: 10px;
-
     border: none;
     border-radius: 8px;
-
     cursor: pointer;
     font-weight: bold;
-
     transition: 0.2s ease;
 }
 
 .editBtn{
     border: none;
-    background: rgb(80, 220, 120);
-    color: white;
-
+    color: rgb(26, 255, 91);
     width: 40px;
     height: 40px;
-
     border-radius: 10px;
     cursor: pointer;
-
     font-size: 16px;
 }
 
 .editBtn:hover{
-    background: rgb(60, 200, 100);
+    color: rgb(24, 255, 90);
 }
 
 .deleteBtn{
     border: none;
-    background: rgb(255, 90, 90);
-    color: white;
-
+    color: rgb(255, 29, 29);
     width: 40px;
     height: 40px;
-
     border-radius: 10px;
     cursor: pointer;
-
     font-size: 16px;
 }
 
 .deleteBtn:hover{
-    background: rgb(235, 70, 70);
+   color: rgb(255, 56, 56);
 }
 
+.viewBtn{
+    border: none;
+    color: rgb(105, 140, 255);
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    scale: 0.99;
+}
 
+.viewBtn:hover{
+    color: rgb(74, 71, 255);
+    scale: 1.02;
+}
+.viewBtn:active{
+    color:  rgb(105, 140, 255);
+    scale: 0.99;
+}
 /* ================= EMPTY STATE ================= */
 
 #emptyState{
     margin-top: 30px;
-
     padding: 30px;
-
     border-radius: 12px;
-
     background: rgb(245, 245, 255);
-
     text-align: center;
 }
 
@@ -398,11 +363,9 @@ body{
     margin-bottom: 10px;
     color: rgb(104, 58, 255);
 }
-
 /* ================= RESPONSIVE ================= */
 
 @media (max-width: 1100px){
-
     #contentLayout{
         grid-template-columns: 1fr;
     }
@@ -410,15 +373,12 @@ body{
 }
 
 @media (max-width: 850px){
-
     #controls{
         grid-template-columns: 1fr 1fr;
     }
 
 }
-
 @media (max-width: 600px){
-
     body{
         padding: 12px;
     }
@@ -445,4 +405,119 @@ body{
         grid-template-columns: 1fr;
     }
 
+}
+
+/* ========MODAL OVERLAY========= */
+.noteModal{
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.65);
+    backdrop-filter: blur(6px);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    z-index: 1000;
+}
+.noteModal.show{
+    display: flex;
+}
+
+.modalContent{
+    width: 100%;
+    max-width: 750px;
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 35px 32px;
+    position: relative;
+    max-height: 85vh;
+    overflow-y: auto;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15), 0 4px 10px rgba(0,0,0,0.08);
+    animation: modalPop 0.25s ease;
+}
+
+@keyframes modalPop{
+    from{
+        transform: scale(0.92);
+        opacity: 0;
+    }
+
+    to{
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.closeModalBtn{
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    width: 42px;
+    height: 42px;
+    border: none;
+    border-radius: 50%;
+    background: #f1f5f9;
+    cursor: pointer;
+    font-size: 18px;
+    transition: 0.2s ease;
+}
+
+.closeModalBtn:hover{
+    background: #e2e8f0;
+    transform: rotate(90deg);
+}
+
+#modalTitle{
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 18px;
+    color: #0f172a;
+    line-height: 1.3;
+    word-break: break-word;
+}
+
+.modalCategory{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 7px 16px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-bottom: 25px;
+    background: #dbeafe;
+    color: #1d4ed8;
+    text-transform: capitalize;
+}
+
+#modalContent{
+    font-size: 16px;
+    line-height: 1.9;
+    color: #334155;
+    white-space: pre-wrap;
+    word-break: break-word;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+#modalDate{
+    display: block;
+    font-size: 13px;
+    color: #64748b;
+    border-top: 1px solid #e2e8f0;
+    padding-top: 18px;
+}
+
+.modalContent::-webkit-scrollbar{
+    width: 8px;
+}
+
+.modalContent::-webkit-scrollbar-thumb{
+    background: #cbd5e1;
+    border-radius: 20px;
+}
+
+.modalContent::-webkit-scrollbar-track{
+    background: transparent;
 }

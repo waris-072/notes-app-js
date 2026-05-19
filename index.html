@@ -23,7 +23,7 @@
         <section id="controls">
             <article class="controlBox">
                 <label for="searchInput"> Search Notes</label>
-                <input type="text" id="searchInput" placeholder="Search by title or content...">
+                <input type="text" id="searchInput" placeholder="Search by title...">
 
             </article>
 
@@ -44,6 +44,7 @@
                     <option value="newest">Newest First</option>
                     <option value="oldest">Oldest First</option>
                     <option value="az">A-Z</option>
+                    <option value="za">Z-A</option>
                 </select>
             </article>
             
@@ -110,6 +111,26 @@
             </section>
         </section>
     </main>
+
+    <div class="noteModal" id="noteModal">
+
+        <div class="modalContent">
+
+            <button class="closeModalBtn" id="closeModalBtn">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <h2 id="modalTitle"></h2>
+
+            <div id="modalCategory" class="modalCategory"></div>
+
+            <p id="modalContent"></p>
+
+            <span id="modalDate"></span>
+
+        </div>
+
+    </div>
 
     <script type="module" src="JS/app.js"></script>
 </body>
